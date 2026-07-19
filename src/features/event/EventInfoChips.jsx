@@ -3,7 +3,7 @@ import { EVENT } from './eventDetails';
 const CHIPS = [
   { key: 'date', icon: '📅', label: 'Date', value: EVENT.dateShort },
   { key: 'time', icon: '⏰', label: 'Time', value: EVENT.time },
-  { key: 'venue', icon: '📍', label: 'Venue', value: EVENT.venueShort },
+  { key: 'venue', icon: '📍', label: 'Venue', value: EVENT.venueAddress },
 ];
 
 const EventInfoChips = () => (
@@ -20,7 +20,7 @@ const EventInfoChips = () => (
           <div className="text-[0.66rem] font-semibold tracking-[0.16em] text-brand-muted uppercase">
             {label}
           </div>
-          <div className="mt-1 text-sm font-bold leading-5 text-brand-ink break-words">
+          <div className="mt-1 text-sm font-bold leading-5 text-brand-ink lg:truncate">
             {value}
           </div>
         </div>

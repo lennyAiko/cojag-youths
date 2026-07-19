@@ -16,10 +16,6 @@ const App = () => (
         “{EVENT.tagline}”
       </p>
 
-      <div className="mt-6">
-        <EventInfoChips />
-      </div>
-
       <p className="mt-10 text-xs font-bold tracking-[0.2em] text-brand-coral uppercase">
         I'll be attending
       </p>
@@ -34,6 +30,10 @@ const App = () => (
 
     <div className="mt-10 px-4">
       <FlierGenerator />
+    </div>
+
+    <div className="mt-6 px-2">
+      <EventInfoChips />
     </div>
   </div>
 );
