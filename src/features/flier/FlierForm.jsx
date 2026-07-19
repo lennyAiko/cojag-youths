@@ -64,7 +64,7 @@ const FlierForm = ({
         type="button"
         onClick={onDownload}
         disabled={isDownloading}
-        className="w-full rounded-full bg-brand-coral px-6 py-3.5 font-bold text-white shadow-[0_10px_24px_rgba(255,71,58,0.3)] transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full bg-brand-coral px-6 py-3.5 font-bold text-white shadow-[0_10px_24px_rgba(255,71,58,0.3)] transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
       >
         {isDownloading ? 'Preparing…' : '⬇ Download my flier'}
       </button>
@@ -72,7 +72,7 @@ const FlierForm = ({
         type="button"
         onClick={onShare}
         disabled={isSharing}
-        className="w-full rounded-full bg-brand-whatsapp px-6 py-3.5 font-bold text-[#04331a] shadow-[0_10px_24px_rgba(37,211,102,0.32)] transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full bg-brand-whatsapp px-6 py-3.5 font-bold text-[#04331a] shadow-[0_10px_24px_rgba(37,211,102,0.32)] transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
       >
         {isSharing ? 'Preparing…' : 'Share to WhatsApp'}
       </button>
