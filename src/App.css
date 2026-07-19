@@ -1,28 +1,23 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-brand-paper: #f3f5fe;
+  --color-brand-ink: #0b1130;
+  --color-brand-blue: #1d3be0;
+  --color-brand-blue-deep: #0a1c8a;
+  --color-brand-coral: #ff473a;
+  --color-brand-amber: #ffb01f;
+  --color-brand-muted: #5a6183;
+  --color-brand-line: #e2e4f2;
+  --color-brand-whatsapp: #25d366;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+}
+
 body {
   margin: 0;
-  color: #fff;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(to bottom, #020917, #101725);
-}
-
-.content {
-  display: flex;
-  min-height: 100vh;
-  line-height: 1.1;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.content h1 {
-  font-size: 3.6rem;
-  font-weight: 700;
-}
-
-.content p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  opacity: 0.5;
+  color: var(--color-brand-ink);
+  font-family: var(--font-sans);
+  background: var(--color-brand-paper);
 }
