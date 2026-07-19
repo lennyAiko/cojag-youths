@@ -7,34 +7,38 @@ const CHIPS = [
 ];
 
 const EventInfoChips = () => (
-  <div className="flex flex-wrap justify-center gap-3">
+  <div className="mx-auto mt-8 grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
     {CHIPS.map(({ key, icon, label, value }) => (
       <div
         key={key}
-        className="flex items-center gap-3 rounded-2xl border border-brand-line bg-white px-4 py-3 shadow-[0_6px_18px_rgba(11,17,48,0.04)]"
+        className="flex min-h-[96px] items-center gap-3 rounded-2xl border border-brand-line bg-white/95 px-4 py-3 shadow-[0_6px_18px_rgba(11,17,48,0.04)]"
       >
-        <span className="grid size-9 place-items-center rounded-lg bg-[#e9e6ff] text-brand-blue">
+        <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#e9e6ff] text-lg text-brand-blue">
           {icon}
         </span>
-        <div className="text-left">
+        <div className="min-w-0 text-left">
           <div className="text-[0.66rem] font-semibold tracking-[0.16em] text-brand-muted uppercase">
             {label}
           </div>
-          <div className="text-sm font-bold text-brand-ink">{value}</div>
+          <div className="mt-1 text-sm font-bold leading-5 text-brand-ink break-words">
+            {value}
+          </div>
         </div>
       </div>
     ))}
 
     {EVENT.isLivestreamed && (
-      <div className="flex items-center gap-3 rounded-2xl border border-brand-line bg-white px-4 py-3 shadow-[0_6px_18px_rgba(11,17,48,0.04)]">
-        <span className="grid size-9 place-items-center rounded-lg bg-[#ffe3e0]">
+      <div className="flex min-h-[96px] items-center gap-3 rounded-2xl border border-brand-line bg-white/95 px-4 py-3 shadow-[0_6px_18px_rgba(11,17,48,0.04)]">
+        <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#ffe3e0]">
           <span className="size-2 animate-pulse rounded-full bg-brand-coral" />
         </span>
-        <div className="text-left">
+        <div className="min-w-0 text-left">
           <div className="text-[0.66rem] font-semibold tracking-[0.16em] text-brand-muted uppercase">
             Also
           </div>
-          <div className="text-sm font-bold text-brand-ink">Live streaming</div>
+          <div className="mt-1 text-sm font-bold leading-5 text-brand-ink break-words">
+            Live streaming
+          </div>
         </div>
       </div>
     )}
