@@ -30,4 +30,4 @@ export const NAME_TEXT = {
 };
 
 export const SHARE_MESSAGE =
-  "I'll be attending the COJAG 2026 Youth Convention — “The Right Steps”! 🙌 Sun 13 Sept 2026, 8:30AM. Come with me!";
+  "I'll be attending the COJAG 2026 Youth Convention — “The Right Steps”! 🙌 Sun 13 Sept 2026, 8:30AM. Come with me! \n You can create yours here: https://cojag-youths.onrender.com/";
