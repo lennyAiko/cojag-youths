@@ -50,7 +50,7 @@ const FlierForm = ({
         type="text"
         value={attendeeName}
         onChange={(event) => onNameChange(event.target.value)}
-        placeholder="e.g. David Charles"
+        placeholder="e.g. Lennox Charles"
         maxLength={MAX_NAME_LENGTH}
         className="rounded-xl border border-brand-line bg-brand-paper px-4 py-3 text-brand-ink focus:border-brand-blue focus:outline-none"
       />
