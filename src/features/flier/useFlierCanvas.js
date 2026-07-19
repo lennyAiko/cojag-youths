@@ -1,9 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { drawImageCovering, frameToBox, tracePillRect } from './canvasDrawing';
-import { NAME_TEXT, PHOTO_FRAME, TEMPLATE_SRC } from './flierConfig';
+import {
+  DEFAULT_TEMPLATE_ID,
+  NAME_TEXT,
+  PHOTO_FRAME,
+  TEMPLATE_OPTIONS,
+} from './flierConfig';
 
 /**
- * Owns the flier <canvas>: loads the template once, composites the
+ * Owns the flier <canvas>: loads the selected template, composites the
  * attendee's photo + name onto it, and re-renders whenever either changes.
  * Drawing is imperative (direct canvas calls) rather than state-driven,
  * since the canvas pixels aren't something React needs to reconcile.
@@ -13,20 +18,28 @@ export function useFlierCanvas() {
   const photoImageRef = useRef(null);
 
   const [templateImage, setTemplateImage] = useState(null);
+  const [selectedTemplateId, setSelectedTemplateId] =
+    useState(DEFAULT_TEMPLATE_ID);
   const [attendeeName, setAttendeeName] = useState('');
   const [photoLabel, setPhotoLabel] = useState('');
 
   useEffect(() => {
     let cancelled = false;
+    const selectedTemplate =
+      TEMPLATE_OPTIONS.find((option) => option.id === selectedTemplateId) ??
+      TEMPLATE_OPTIONS[0];
+
+    setTemplateImage(null);
+
     const img = new Image();
     img.onload = () => {
       if (!cancelled) setTemplateImage(img);
     };
-    img.src = TEMPLATE_SRC;
+    img.src = selectedTemplate.src;
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [selectedTemplateId]);
 
   const render = useCallback(() => {
     const canvas = canvasRef.current;
@@ -51,11 +64,6 @@ export function useFlierCanvas() {
       drawImageCovering(ctx, photo, frameBox);
       ctx.restore();
     }
-
-    ctx.lineWidth = Math.max(4, PHOTO_FRAME.ringWidthRatio * width);
-    ctx.strokeStyle = PHOTO_FRAME.ringColor;
-    tracePillRect(ctx, frameBox);
-    ctx.stroke();
 
     if (attendeeName) {
       const fontSize = NAME_TEXT.sizeRatio * width;
@@ -119,6 +127,9 @@ export function useFlierCanvas() {
     isTemplateReady: Boolean(templateImage),
     photoLabel,
     attendeeName,
+    selectedTemplateId,
+    templateOptions: TEMPLATE_OPTIONS,
+    setSelectedTemplateId,
     setAttendeeName,
     setPhotoFile,
     getFlierBlob,

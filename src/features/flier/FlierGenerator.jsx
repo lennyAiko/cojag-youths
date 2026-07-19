@@ -10,7 +10,10 @@ const FlierGenerator = () => {
     isTemplateReady,
     photoLabel,
     attendeeName,
+    selectedTemplateId,
+    templateOptions,
     setAttendeeName,
+    setSelectedTemplateId,
     setPhotoFile,
     getFlierBlob,
   } = useFlierCanvas();
@@ -44,8 +47,11 @@ const FlierGenerator = () => {
       <FlierForm
         photoLabel={photoLabel}
         attendeeName={attendeeName}
+        selectedTemplateId={selectedTemplateId}
+        templateOptions={templateOptions}
         onPhotoChange={setPhotoFile}
         onNameChange={setAttendeeName}
+        onTemplateChange={setSelectedTemplateId}
         onDownload={handleDownload}
         onShare={handleShare}
         isDownloading={isDownloading}

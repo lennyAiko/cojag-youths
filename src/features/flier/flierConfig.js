@@ -1,5 +1,12 @@
 import templateSrc from '../../assets/flier-template.jpeg';
+import templateSrc2 from '../../assets/flier-template2.png';
 
+export const TEMPLATE_OPTIONS = [
+  { id: 'classic', label: 'Classic', src: templateSrc },
+  { id: 'modern', label: 'Modern', src: templateSrc2 },
+];
+
+export const DEFAULT_TEMPLATE_ID = TEMPLATE_OPTIONS[0].id;
 export const TEMPLATE_SRC = templateSrc;
 
 export const MAX_NAME_LENGTH = 24;
@@ -10,13 +17,11 @@ export const MAX_NAME_LENGTH = 24;
  * of how large the on-screen canvas is rendered.
  */
 export const PHOTO_FRAME = {
-  cx: 0.298,
-  cy: 0.472,
+  cx: 0.285,
+  cy: 0.475,
   w: 0.4,
   h: 0.535,
   radius: 0.025,
-  ringColor: '#1d3be0',
-  ringWidthRatio: 0.016,
 };
 
 /** Fractional placement + styling of the attendee's name text. */
@@ -30,4 +35,4 @@ export const NAME_TEXT = {
 };
 
 export const SHARE_MESSAGE =
-  "I'll be attending the COJAG 2026 Youth Convention — “The Right Steps”! 🙌 Sun 13 Sept 2026, 8:30AM. Come with me! \n You can create yours here: https://cojag-youths.onrender.com/";
+  "I'll be attending the COJAG 2026 Youth Convention — “The Right Steps”! 🙌 Sunday 13th of September 2026, 8:30AM. Come with me! \n\nYou can create yours here: https://cojag-youths.onrender.com/";
